@@ -55,7 +55,7 @@ export default class Uploader {
     // Firebase SDK
     this.auth = firebase.auth();
 
-    Uploader.addPolyfills();
+    //Uploader.addPolyfills();
 
     // DOM Elements
     this.addButton = $('#add');
@@ -138,13 +138,13 @@ export default class Uploader {
     this.imageInput.unwrap();
 
     // Only process image files.
-    if (file.type.match('image.*')) {
+    //if (file.type.match('image.*')) {
       const reader = new FileReader();
       reader.onload = (e) => this.displayPicture(e.target.result);
       // Read in the image file as a data URL.
       reader.readAsDataURL(file);
       this.disableUploadUi(false);
-    }
+    //}
   }
 
   /**
@@ -214,7 +214,7 @@ export default class Uploader {
    */
   uploadPic(e) {
     e.preventDefault();
-    this.disableUploadUi(true);
+    //this.disableUploadUi(true);
     const imageCaption = this.imageCaptionInput.val();
 
     this.generateImages().then((pics) => {
